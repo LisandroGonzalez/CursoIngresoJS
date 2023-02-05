@@ -35,7 +35,6 @@ function Circulo ()
 {
 	var radio;
     var alambre;
-    var PI = 3.1416;
     var hilos;
     var mensaje;
 
@@ -44,7 +43,7 @@ function Circulo ()
     hilos = 3;
 
     radio = parseInt(radio);
-    alambre = radio * 2 * PI * hilos;
+    alambre = radio * 2 * Math.PI * hilos;
 
     mensaje += alambre;
 
