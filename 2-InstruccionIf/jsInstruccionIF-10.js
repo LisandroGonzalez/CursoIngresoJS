@@ -12,22 +12,26 @@ function mostrar()
 	var aprobo;
 	var rangoMenor;
 	var rangoMayor;
+	var mensaje;
 
 	excelente = 9;
 	aprobo = 4;
 	rangoMenor = 1;
 	rangoMayor = 10;
 
-	notaRandom = Math.random() * (rangoMayor - rangoMenor) + rangoMenor;
+	notaRandom = Math.random() * (rangoMayor - rangoMenor) + rangoMenor; // Numero random entre rangoMenor(1) y rangoMayor(10).
+
+	notaRandom = parseInt(notaRandom);
 
 	alert("Nota: " + notaRandom); // mensaje para ver la nota.
 
 	if(notaRandom >= excelente){
-		alert("EXCELENTE");
+		mensaje = "EXCELENTE";
 	}else if(notaRandom >= aprobo){
-		alert("APROBÓ");
+		mensaje = "APROBÓ";
 	}else{
-		alert("Vamos, la proxima se puede.");
+		mensaje = "Vamos, la proxima se puede.";
 	}
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

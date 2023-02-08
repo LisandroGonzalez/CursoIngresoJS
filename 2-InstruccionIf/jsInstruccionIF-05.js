@@ -1,4 +1,3 @@
-
 /*
 Lisandro Gonzalez
 Al ingresar una edad solo debemos informar 
@@ -9,6 +8,7 @@ function mostrar()
 	var edad;
 	var rangoMenor;
 	var rangoMayor;
+	var mensaje;
 
 	edad = document.getElementById("txtIdEdad").value;
 	rangoMenor = 13;
@@ -17,6 +17,7 @@ function mostrar()
 	edad = parseInt(edad);
 	
 	if(edad < rangoMenor || edad > rangoMayor){
-		alert("no es adolescente.");
+		mensaje = "no es adolescente.";
 	}
+	alert(mensaje);
 }//FIN DE LA FUNCIÓN

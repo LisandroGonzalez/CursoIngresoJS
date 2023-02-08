@@ -8,6 +8,7 @@ function mostrar()
 	var edad;
 	var rangoMenor;
 	var rangoMayor;
+	var mensaje;
 
 	edad = document.getElementById("txtIdEdad").value;
 	rangoMenor = 13;
@@ -15,8 +16,11 @@ function mostrar()
 
 	edad = parseInt(edad);
 	
-	if(edad >= rangoMenor && edad <= rangoMayor){
-		alert("es adolescente.");
+	if(edad >= rangoMenor /*&& edad <= rangoMayor*/){
+		if(edad <= rangoMayor){
+			mensaje = "es adolescente.";
+		}
+		alert(mensaje);
 	}
 
 }//FIN DE LA FUNCIÓN
