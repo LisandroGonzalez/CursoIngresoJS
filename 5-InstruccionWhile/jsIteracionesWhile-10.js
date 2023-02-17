@@ -1,4 +1,5 @@
 /*
+Lisandro Gonzalez
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
 1-Suma de los negativos.
@@ -9,21 +10,73 @@ hasta que el usuario quiera, mostrar:
 6-Cantidad de números pares.
 7-Promedio de positivos.
 8-Promedios de negativos.
-9-Diferencia entre positivos y negativos, (positvos-negativos). */
+9-Diferencia entre positivos y negativos.
+*/
 function mostrar()
 {
-	//declarar contadores y variables 
 	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
+	var sumaNegativos;
+	var sumaPositivos;
+	var cantNegativos;
+	var cantPositivos;
+	var cantCeros;
+	var cantPares;
+	var promedioPositivos;
+	var promedioNegativos;
+	var difPosNeg;
 
-	respuesta="si";
-
-	while(respuesta=="si")
+	sumaNegativos = 0;
+	sumaPositivos = 0;
+	cantNegativos = 0;
+	cantPositivos = 0;
+	cantCeros = 0;
+	cantPares = 0;
+	promedioNegativos = 0;
+	promedioPositivos = 0;
+	respuesta = true;
+	
+	while(respuesta)
 	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+		numeroIngresado = prompt("Ingrese un numero.");
+		numeroIngresado = parseInt(numeroIngresado);
+		if(numeroIngresado > 0)
+		{
+			sumaPositivos += numeroIngresado;
+			cantPositivos++;
+		}
+		else
+		{
+			if(numeroIngresado < 0)
+			{
+				sumaNegativos += numeroIngresado;
+				cantNegativos++;
+			}
+			else
+			{
+				cantCeros++;
+			}
+		}
+		if(numeroIngresado % 2 == 0)
+		{
+			cantPares++;
+		}
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+		respuesta = confirm("Desea continuar?");
+	}
+
+	promedioPositivos = sumaPositivos / cantPositivos;
+	promedioNegativos = sumaNegativos / cantNegativos;
+	difPosNeg = sumaPositivos + sumaNegativos;
+	
+	document.write("<p> " + sumaNegativos + "</p>");
+	document.write("<p> " + sumaPositivos + "</p>");
+	document.write("<p> " + cantNegativos + "</p>");
+	document.write("<p> " + cantPositivos + "</p>");
+	document.write("<p> " + cantCeros + "</p>");
+	document.write("<p> " + cantPares + "</p>");
+	document.write("<p> " + promedioPositivos + "</p>");
+	document.write("<p> " + promedioNegativos + "</p>");
+	document.write("<p> " + difPosNeg + "</p>");
+
 }//FIN DE LA FUNCIÓN
